@@ -14,6 +14,23 @@ class Deck {
   get cards() {
     return this._cards;
   }
+
+  find(suit, rank) {
+    return this._cards.find(card => (card.suit == suit) && (card.rank == rank));
+  }
+
+  draw(card) {
+    if (!(card instanceof Card)) {
+      card = this.find(card.suit, card.rank);
+    }
+    this._cards = this._cards.filter(icard => icard !== card);
+    return card;
+  }
+
+  drawRandom() {
+    let card = this._cards[Math.floor(Math.random() * this._cards.length)];
+    return this.draw(card);
+  }
 }
 
 export default Deck;

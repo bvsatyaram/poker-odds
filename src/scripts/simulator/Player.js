@@ -1,8 +1,8 @@
 import Card from './Card';
 
 class Player {
-  constructor() {
-    this._hand = [];
+  constructor(hand = []) {
+    this._hand = hand;
   }
 
   get hand() {
@@ -10,7 +10,7 @@ class Player {
   }
 
   drawCard(card) {
-    if (! card instanceof Card) {
+    if (!(card instanceof Card)) {
       throw new Error(`Invalid card: ${JSON.stringify(card)}`)
     }
 
