@@ -18,7 +18,7 @@ class Game {
     this._players.push(player);
 
     for(let i = 1; i < playersCount; i++) {
-      player = new Player();
+      player = new Player([this._deck.drawRandom(), this._deck.drawRandom()]);
       this._players.push(player);
     }
 

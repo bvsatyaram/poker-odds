@@ -25,9 +25,9 @@ describe('Game', () => {
     expect(myPlayer.hand[1].hand).to.equal(myHand[1].hand);
     expect(game.communityCards.length).to.equal(5);
     expect(game.communityCards[0]).to.be.an.instanceof(Card);
-    // expect(game.deck).to.be.an.instanceof(Deck);
+    expect(game._deck).to.be.an.instanceof(Deck);
     // 8 cards for 4 players and 5 community cards
-    // expect(game.deck.cards.length).to.equal(39);
+    expect(game._deck.cards.length).to.equal(39);
   });
 
   it('initializes a game with 3 known community cards', () => {
